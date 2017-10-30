@@ -1,0 +1,225 @@
+
+@media screen and (min-width: 481px) {
+  body {
+    background-image: url(http://www.clipartkid.com/images/569/blue-background-scrub-masters-commercial-cleaning-inc-B7Uop0-clipart.jpg);
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    text-align: left;
+    text-indent: 0;
+    color: black;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Times New Roman", Georgia, Serif;
+  }
+  .main{
+    margin-top: 30px;
+  }
+  .buttons {
+    margin-top: 20px;
+  }
+  .navlist{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #99ccff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    text-align: center;
+  }
+  .navlinkLi{
+    margin-left: 35px;
+    float: left;
+    height: 60px;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    font-family:  "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  }
+  .navlink{
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    top: -600px;
+  }
+  .navlink:hover{
+    color: white;
+  }
+  #colorfigure{
+    margin-top: 60px;
+    margin-left: 15%;
+    margin-right: auto;
+    width: 70%;
+    background-color: white;
+  }
+  #map {
+    height: 400px;
+    width: 800px;
+  }
+  #VU {
+    margin-left: 17%;
+    width: 70%;
+    height: auto;
+  }
+  dl.content, p {
+    text-align: left;
+  }
+  h1{
+    text-align: center;
+    page-break-after: avoid;
+  }
+  dt {
+    margin-top: 50px;
+  }
+  dd{
+    font-size: smaller;
+    margin: 10px;
+  }
+  ul,table{
+    page-break-before: avoid;
+  }
+
+  #title, #content, #locationMap, h3{
+    text-align: left;
+    text-decoration: underline;
+  }
+  h2{
+    text-align: center;
+    text-decoration: underline;
+  }
+  .restLinks {
+    font-family: "Helvetica";
+  }
+  .restLinks:link{
+    color:  blue;
+  }
+  .restLinks:hover {
+    color:  lime;
+  }
+  .restLinks:visited {
+    color:	#666699;
+  }
+  table,th,td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    border-style: solid;
+    border-spacing: inherit;
+    caption-side: top;
+    width: 100%;
+    margin-left: 0%;
+    table-layout: fixed;
+    word-wrap: break-word;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+body {
+  background-image: url(http://www.clipartkid.com/images/569/blue-background-scrub-masters-commercial-cleaning-inc-B7Uop0-clipart.jpg);
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  text-align: left;
+  text-indent: 0;
+  color: black;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "Times New Roman", Georgia, Serif;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+#navlist{
+  list-style: none outside none;
+  margin-left: 0%;
+}
+#map {
+  height: 200px;
+  width: 400px;
+}
+#VU {
+  margin-left: 18%;
+  width: 350px;
+  height: 100px;
+}
+dl.content, p {
+  text-align: left;
+}
+h1{
+  text-align: center;
+  page-break-after: avoid;
+}
+dt {
+  margin-top: 50px;
+}
+dd{
+  font-size: smaller;
+  margin: 10px;
+}
+ul,table{
+  page-break-before: avoid;
+}
+
+#title, #content, #locationMap, h3{
+  text-align: left;
+  text-decoration: underline;
+}
+.locationMap, #map{
+  display: none;
+}
+
+h2{
+  text-align: center;
+  text-decoration: underline;
+}
+a {
+  font-family: "Helvetica";
+}
+a:link {
+  color: blue;
+}
+a:hover {
+  color: blue;
+}
+a:visited {
+  color:	darkblue;
+}
+table,th,td {
+  border-collapse: collapse;
+  border: 1px solid black;
+  border-style: solid;
+  border-spacing: inherit;
+  caption-side: top;
+  width: 100%;
+  margin-left: 0%;
+  table-layout: fixed;
+  word-wrap: break-word;
+  background-color: white;
+}
+#productTable{
+  width: 50%;
+  white-space: nowrap;
+  background-size: auto;
+  color: black;
+  table-layout: auto;
+  margin-left: 1px;
+
+}
+#rowtable,#nametable,#datetable,#categorytable,#locationtable, #amounttable{
+  width:30px;
+}
+#row,#name, #category, #amount, #location, #date {
+  width:30px;
+  margin-right:1%;
+}
+#browserlist{
+  list-style-type: lower-roman;
+  list-style-position: inherit;
+  list-style-image: none;
+}
+}

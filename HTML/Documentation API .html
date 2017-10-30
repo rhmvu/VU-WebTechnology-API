@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ProductDB REStful API doc</title>
+  <meta charset="utf-8">
+  <style media="screen">
+  body {
+    background-image: url(http://www.clipartkid.com/images/569/blue-background-scrub-masters-commercial-cleaning-inc-B7Uop0-clipart.jpg);
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+    text-align: left;
+    text-indent: 0;
+    text-decoration: none;
+    color: 	#589693;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Times New Roman", Georgia, Serif;
+  }
+  #VU {
+    margin-left: 17%;
+    width: 70%;
+    height: auto;
+  }
+  h2{
+    text-align: center;
+
+    /*width: 70%;
+    margin-right: auto;
+    margin-left: 15%;*/
+    color: inherit;
+    text-decoration: underline;
+  }
+  a {
+    font-family: "Helvetica";
+  }
+  dd{
+    font-size: inherit;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 3%;
+  }
+  h1{
+    text-align: left;
+    width: 70%;
+    margin-right: auto;
+    margin-left: 10%;
+    display:inline;
+    background-size: auto;
+    vertical-align: top;
+  }
+  dl, p {
+    text-align: left;
+    width: 70%;
+    margin-right: auto;
+    margin-left: 10%;
+    color: inherit;
+  }
+  dt{
+    text-decoration: underline;
+    font-size: larger;
+  }
+  .navlink{
+    text-align: center;
+    width: 70%;
+    margin-right: auto;
+    margin-left: 10%;
+    display:inline;
+  }
+
+  #backgroundfigure{
+    background-color: white;
+    color: black;
+    margin-left: 15%;
+    margin-right: auto;
+    width: 70%;
+    height: 100%;
+  }
+  ul{
+    list-style-type: none;
+  }
+}
+</style>
+</head>
+<body>
+  <div id="backgroundfigure">
+    <figure>
+      <img id="VU" class="content" src="https://www.vu.nl/nl/Images/VUlogo_NL_Blauw_HR_RGB_tcm289-201375.png" alt="VU logo">
+    </figure>
+    <h1>ProductDB RESTful API by Ruben and Kostas</h1>
+    <p>
+      The product API can be used to save products in a database. The API is accessible via port 8080 and works via HTTP. The port can be modified in the server.py source code.</p>
+
+      <a class="navlink" href="#Create">Create a new row</a><br>
+      <a class="navlink" href="#Retrieve">Retrieve a table or row</a><br>
+      <a class="navlink" href="#Update">Update a row</a><br>
+      <a class="navlink" href="#Delete">Delete or reset a table or row</a><br>
+      <a class="navlink" href="#Errors">Error handling</a><br>
+      <h2>Functions</h2>
+      <dl>
+        <dt id="Create">Create a new row</dt>
+        <dd>
+          <ul>
+            <li>Parameter: <strong>/create</strong></li>
+            <li>Function: Creates a new row in the database when a JSON objecttable is sent in the request body.</li>
+            <li>Requestmethod: HTTP DELETE</li>
+            <li>Dataformat required: JSON</li>
+            <li>Response: HTTP 201</li>
+          </ul>
+        </dd>
+        <dt id="Retrieve">Retrieve a table or row</dt>
+
+        <dd>
+          <ul>
+            <li>Parameter: <strong>/retrieve-all</strong></li>
+            <li>Function: Used to retrieve the whole database in JSON format.</li>
+            <li>Requestmethod: HTTP GET</li>
+            <li>Response: HTTP 200</li>
+          </ul>
+
+          <ul>
+            <li>Parameter: <strong>/retrieve/&lt;rownumber&gt;</strong></li>
+            <li>Function: Used to retrieve a specific row of the database.</li>
+            <li>Requestmethod: HTTP GET</li>
+            <li>Response: HTTP 200</li>
+          </ul>
+
+
+        </dd>
+        <dt id="Update">Update a row</dt>
+        <dd>
+          <ul>
+            <li>Parameter: <strong>/update/&lt;rownumber&gt;</strong></li>
+            <li>function: Updates a row when a JSON objectlist is sent in the request body</li>
+            <li>Dataformat required: JSON</li>
+            <li>Requestmethod: HTTP PUT</li>
+            <li>Response: HTTP 200
+            </ul>
+          </dd>
+
+          <dt id="Delete">Delete or reset a table or row</dt>
+          <dd>
+            <ul>
+              <li>Parameter: <strong>/delete/&lt;rownumber&gt;</strong></li>
+              <li>Function: Removes the specified rownumber from the database.</li>
+              <li>Requestmethod: HTTP DELETE</li>
+              <li>Response: HTTP 200</li>
+            </ul>
+
+            <ul>
+              <li>Parameter: <strong>/reset</strong></li>
+              <li>Function: Resets the whole database and will put one example product in the database.
+                <br>The example product in JSON format:
+                ('Banana', 'Fruit', 'Amsterdam', '2014-10-05', '15')</li>
+                <li>Requestmethod: HTTP DELETE</li>
+                <li>Response: HTTP 200</li>
+              </ul>
+
+
+              <ul>
+                <li>Parameter: <strong>/reset-all</strong></li>
+                <li>Function: Resets the <strong>whole</strong> database to an empty state.</li>
+                <li>Requestmethod: HTTP DELETE</li>
+                <li>Response: HTTP 200</li>
+              </ul>
+
+            </dd>
+
+
+          </dl>
+
+          <h2 id="Errors">Errorhandling</h2>
+          <dl>
+            <dt>Error 404</dt>
+            <dd>
+              When a link does not match one of the above parameters, a 404 will be raised.
+            </dd>
+
+            <dt>Error 415</dt>
+            <dd>The server expects data in (valid) JSON format in the requestbody when accepting the ‘create’ or ‘update’ requests. If no valid JSON data is detected in the body error 415 is raised.</dd>
+          </dl>
+          </div>
+        </body>
+        </html>

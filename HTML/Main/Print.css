@@ -1,0 +1,71 @@
+
+body {
+  text-align: left;
+  text-indent: 0;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "Times New Roman", Georgia, Serif;
+
+}
+#input,.buttons{
+  display: none;
+}
+h1 {
+  color: #589693;
+}
+#VU {
+  width: 400px;
+  height: auto;
+  float: right;
+  position:static;
+}
+
+#productTable{
+  font-size: 8px;
+  width: 90%;
+  white-space: nowrap;
+  background-size: auto;
+  background-color: white;
+  color: inherit;
+  table-layout: fixed;
+}
+table,th,td {
+  border-collapse: collapse;
+  border: 1px solid black;
+  caption-side: top;
+  width: 100%;
+  background-size: auto;
+  background-color: white;
+  color: inherit;
+  table-layout: fixed;
+}
+caption{
+  text-transform: uppercase;
+}
+a:link {
+  color: lightblue;
+}
+dd{
+  font-size: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  margin-left: 3%;
+}
+p,dl,dt,dd,table,th,td{
+  orphans: 10;
+  widows: 10;
+}
+ul{
+  break-inside: avoid;
+  page-break-after: avoid;
+  page-break-before: avoid;
+}
+a[href^="http://"]:after, a[href^="https://"]:after, a:link, a:visited {
+  color: black;
+  content: "(" attr(href) ")";
+  page-break-before: avoid;
+}

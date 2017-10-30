@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- In order to use jquery.tablesorter.js we nad to inclde it to our folder
+because in their site they explicitly request not to hotlink it.
+http://tablesorter.com/docs/ -->
+
+<head>
+  <title>Assignments by Kostas and Ruben</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" media="print" type="text/css" href="Print.css">
+  <link rel="stylesheet" type="text/css" href="Screen.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.tablesorter.js"></script>
+
+</head>
+<body>
+  <nav>
+    <ul class="navlist">
+      <li class="navlinkLi"><a class="navlink" href="#title">Product table</a></li>
+      <li class="navlinkLi"><a class="navlink" href="#locationMap">Map</a></li>
+      <li class="navlinkLi"><a class="navlink" href="#reporttitle">Compatibility report</a></li>
+      <li class="navlinkLi"><a class="navlink" href="#titleQALAB1">Lab 1</a></li>
+      <li class="navlinkLi"><a class="navlink" href="#titleQALAB2">Lab 2</a></li>
+      <li class="navlinkLi"><a class="navlink" href="#titleQALAB3">Lab 3</a></li>
+      <li class="navlinkLi"><a class="navlink" href="#titleQALAB4">Lab 4</a></li>
+      <li class="navlinkLi"><a class="navlink" href="#titleQALAB5">Lab 5</a></li>
+      <li class="navlinkLi"><a class="navlink" href="#titleQALAB6">Lab 6</a></li>
+    </ul>
+  </nav>
+  <div id="colorfigure">
+    <figure>
+      <img id="VU" class="content" src="https://www.vu.nl/nl/Images/VUlogo_NL_Blauw_HR_RGB_tcm289-201375.png" alt="VU logo">
+    </figure>
+    <h1 class="content">Web Technology assignments by Kostas and Ruben</h1>
+
+    <h2 id="title" class="content">Product Table</h2>
+    <div id="load">
+      <form id="submitForm">
+        <table id="productTable" class="table">
+          <thead>
+            <tr>
+              <th id="rowtable">Row#</th>
+              <th id="nametable">Name</th>
+              <th id="categorytable">Category</th>
+              <th id="amounttable">Amount</th>
+              <th id="locationtable">Location</th>
+              <th id="datetable">Purchase date</th>
+            </tr>
+          </thead>
+          <tbody id="body">
+          </tbody>
+          <tr>
+            <td>Row#:<input type= "number" id="row" name="row"></td>
+            <td>Name: <input type="text" id="name" name="name"></td>
+            <td>Category: <input type="text" id="category" name="category"></td>
+            <td>Amount: <input type="number" id="amount" name="amount"></td>
+            <td>Location: <input type="text" id="location" name="location"></td>
+            <td>Date: <input type="date" id="date" name="date"></td>
+          </tr>
+        </table>
+        <div class="buttons">
+          <input type="submit" class="submitbutton" value="Submit" onclick="SubmitForm();">
+          <input type="submit" class="submitbutton" value="Update*" onclick="UpdateProduct();">
+          <input type="submit" class="submitbutton" value="Reset"  onclick="ResetForm();">
+          <input type="submit" class="submitbutton" value="Delete*" onclick="RemoveElement();">
+          <p>*: <em>Specification of rownumber required.</em></p>
+        </div>
+      </form>
+    </div>
+
+    <h2 id="locationMap" class="content">Product location map</h2>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js"></script>
+    <div id="map"></div>
+    <script src="script.js"></script>
+
+    <!-- Sorting the first table doesnt work because of its dynamical content.
+    If we try to make it sortable the table shows the old data aswell.
+    Due to lack of time we decided that is more importand for the rest of the
+    assignment to work than for the first table to be sortable. -->
+
+    <h2 id="reporttitle" class="content">Browser Compatibility report</h2>
+    <p>This website is displayed almost same in both Chrome and Edge. The only difference is the border around the Submit button in the form. To get the table aligned in edge i had to use a certain width and make it absolute. Otherwise the browsers didn't display it in the same way. I tested the print style using control+p and scrolling through the previews. I tested different screen sizes by editing the browser window size and zoom indepently. This gave a good impression how the HTML/CSS reacted to the changes. </p>
+
+
+    <h2 id="titleQALAB1" class="content">Questions and answers LAB 1</h2>
+
+    <dl id="Questionsandanswerslab1" class="content">
+
+      <dt>1. Make sure you have read Paul Ford's article "On HTML5 and the Group That Rules the Web" (see Reader on BlackBoard). What is, according to this article, the key difference between the HTML5 Recommendation published by W3C and the one published by the WHATWG?</dt>
+      <dd>W3C wanted to reengineer the web, to make it more accessible for the blind people. They worked on a new version of HTML, XHTML2. WHATWG was formed by engineers from mozilla, opera and safari. WHATWG came up with HTML5, Which W3C acknowledged as the right one in 2007. The key differences between the two specifications are:
+
+        <ul>
+          <li> The main element</li>
+          <li> The web notifications API</li>
+          <li> The hgroup element</li>
+        </ul>
+      </dd>
+
+      <dt>2. Explain the difference between "the Internet" and "the World-Wide Web". Provide links to the online resources you used (if any) to answer this question.</dt>
+
+      <dd>The Internet is a massive network of networks, a networking infrastructure. It connects millions of computers together globally, forming a network in which any computer can communicate with any other computer as long as they are both connected to the Internet. Information that travels over the Internet does so via a variety of languages known as protocols.
+        <br>The World Wide Web, or simply Web, is a way of accessing information over the medium of the Internet. It is an information-sharing model that is built on top of the Internet. The Web uses the HTTP protocol, only one of the languages spoken over the Internet, to transmit data. Web services, which use HTTP to allow applications to communicate in order to exchange business logic, ue the the Web to share information. The Web also utilizes browsers, such as Internet Explorer or Firefox, to access Web documents called Web pages that are linked to each other via hyperlinks. Web documents also contain graphics, sounds, text and video.
+        <p><a class="restLinks" href="http://www.webopedia.com/DidYouKnow/Internet/Web_vs_Internet.asp" target="_blank">Source 1</a></p>
+        <p><a class="restLinks" href="http://researchpedia.info/difference-between-internet-and-world-wide-web/" target="_blank">Source 2</a></p>
+      </dd>
+      <dt>3. What are the three essential technologies that Tim Berners-Lee created to build the World-Wide Web on top of the already existing Internet infrastructure?</dt>
+      <dd>
+        <ul>
+          <li> A system of globally unique identifiers for resources on the Web and elsewhere, the universal document identifier (UDI), later known as uniform resource locator (URL) and uniform resource identifier (URI)</li>
+          <li>The publishing language HyperText Markup Language (HTML)</li>
+          <li>The Hypertext Transfer Protocol (HTTP)</li>
+        </ul>
+      </dd>
+
+      <dt>4. Create a document with the text "Hello World!" in a word processor such as Microsoft Word or LibreOffice Writer. Save the file as a Web page or HTML document and inspect the HTML source using a plain text editor or a browser. Describe the key differences of the exported HTML against a regular HTML document created with a plain text editor. Hint: you could use the HTML <code>&lt;pre&gt;</code> tag with the proper escaping to show some example HTML source code generated by the word processor.
+      </dt>
+      <dd>
+        The header contains a huge block of css to ensure the text would be exactly the same as displayed in word. This would not (automatically) be included in a normal text editor. There is even code saying it is written with the dutch language setting and written in Microsoft Word, which is not necessary to display the message.
+        <br>
+        <pre>
+          &lt;style&gt;
+          &lt;!--
+          /* Font Definitions */
+          @font-face
+          {font-family:"Cambria Math";
+          panose-1:2 4 5 3 5 4 6 3 2 4;}
+          @font-face
+          {font-family:Calibri;
+            panose-1:2 15 5 2 2 2 4 3 2 4;}
+            /* Style Definitions */
+            p.MsoNormal, li.MsoNormal, div.MsoNormal
+            {margin-top:0cm;
+              margin-right:0cm;
+              margin-bottom:10.0pt;
+              margin-left:0cm;
+              line-height:115%;
+              font-size:11.0pt;
+              font-family:"Calibri","sans-serif";}
+              .MsoPapDefault
+              {margin-bottom:10.0pt;
+                line-height:115%;}
+                @page WordSection1
+                {size:595.3pt 841.9pt;
+                  margin:70.85pt 70.85pt 70.85pt 70.85pt;}
+                  div.WordSection1
+                  {page:WordSection1;}
+                  --&gt;
+                  &lt;/style&gt;
+        </pre>
+      </dd>
+
+      <dt>
+        5. Find out which port (according to the current IANA assignment) is used for the following protocols:
+        <ul>
+          <li> HTTP</li>
+          <li> SSH</li>
+          <li> FTP</li>
+        </ul>
+      Provide a one line description of all three protocols, indicate with a link which authoritative source you have used for each description, and why you think your source is authoritative for this topic.
+      Encode your answer in an HTML table with an id attribute set to protocolTable. The table should have three rows, one for each protocol. It should have at least four columns: for each protocol, list the protocol name, port number, description and the authoritative source. You will need this table in Assignment 2.
+    </dt>
+    <dd>
+      <table id="protocolTable" class="table">
+        <caption>Protocol table</caption>
+        <thead>
+          <tr>
+            <th>Protocol</th><th>Port number</th><th>Description</th><th>Authorative source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><abbr title="Hyper Text Transfer Protocol"></abbr>HTTP</td><td>80</td><td><q>provides a network protocol standard that Web browsers and servers use to communicate.</q></td><td>https://www.w3.org/Protocols/rfc2616/rfc2616.html</td>
+          </tr>
+          <tr>
+            <td><abbr title="Secure Shell"></abbr>SSH</td><td>22</td><td><q>protocol for secure network communications designed to be relatively simple and inexpensive to implement.</q></td><td>http://www.cisco.com/c/en/us/about/press/internet-protocol-journal/back-issues/table-contents-46/124-ssh.html</td>
+          </tr>
+          <tr>
+            <td><abbr title="File Transer Protocol"></abbr>FTP</td><td>21</td><td><q>is a standard network protocol used to transfer computer files between a client and server on a computer network.</q></td><td>https://www.w3.org/Protocols/rfc959/1_Introduction.html</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    </dd>
+
+    <dt>
+      6. Look at the following two HTML paragraphs:<br>
+      <pre>
+        &lt;p&gt;;This is an &lt;strong&gt;important&lt;/strong&gt; point.&lt;/p&gt;
+        &lt;p&gt;This is another &lt;b&gt;important&lt;/b&gt; point.&lt;/p&gt;;
+      </pre>
+      Explain why the HTML of the first paragraph should be preferred. Illustrate this with an example. Also, identify another pair of HTML constructs for which the same rationale holds.
+    </dt>
+
+    <dd>They look the same to humans bot to search bots they are not. Search bots only identify <code>&lt;strong&gt;</code> tags as important keywords and do not identify <code>&lt;b&gt;</code> words as important keywords.
+      <br>
+      <pre>
+        &lt;strong&gt;This bold text&lt;/strong&gt; is in strong tags.
+        &lt;b&gt;This bold text&lt;/b&gt; is in b tags.
+      </pre>
+      The <code>&lt;i&gt;</code> and the <code>&lt;em&gt;</code> tags have the same semantics. They both put the text in italic.
+      <pre>
+        &lt;em&gt;Emphasized text&lt;/em&gt;
+        &lt;i&gt;Emphasized text&lt;/i&gt;;
+      </pre>
+      <p><a class="restLinks" href="http://www.w3schools.com/TAgs/tag_b.asp" target="_blank">Source b tag</a><br>
+        <a class="restLinks" href="http://www.w3schools.com/TAgs/tag_strong.asp" target="_blank">Source strong tag</a><br>
+        <a class="restLinks" href="http://www.w3schools.com/tags/tag_em.asp" target="_blank">Source em tag</a> <br>
+        <a class="restLinks" href="http://www.w3schools.com/tags/tag_i.asp" target="_blank">Source i tag</a></p>
+      </dd>
+      <dt>
+        7. Identify one similarity and one difference between the HTML elements <em>span</em> and <em>div</em>.
+      </dt>
+      <dd> They both define a section in a document.
+        <br>
+        The <code>&lt;div&gt;</code> element is often used as a container for other HTML elements, while the <code>&lt;span&gt;;</code> element is often used as a container for some text.
+      </dd>
+      <dt>
+        8. Describe the pros and cons of using the <code>iframe</code> tag in HTML.
+      </dt>
+      <dd>
+        <ul>
+          <li>In an iFrame, because the HTML can be changed without the discretion of the website’s creator, malicious content can be uploaded without permission of the website’s designer.</li>
+          <li>iframes often are not rendered in mobile browsers</li>
+          <li>iframe forces a new scrollbar</li>
+          <li>javascript must be available for iframes to render</li>
+          <li>pages with iframes take more time to load</li>
+        </ul>
+        <p><a class="restLinks" href="http://www.mediacollege.com/internet/html/frames/pros-cons.html" target="_blank">Source</a></p>
+      </dd>
+      <dt>
+        9. List potential benefits of using CSS. (Expected length: 7-8 lines)
+      </dt>
+      <dd>
+        <ul>
+          <li>Easier to maintain and update.</li>
+          <li>Greater consistency in design.</li>
+          <li>More formatting options.</li>
+          <li>Lightweight code.</li>
+          <li>Faster download times.</li>
+          <li>Search engine optimization benefits.</li>
+        </ul>
+        <p><a class="restLinks" href="http://www.networksolutions.com/education/css-web-design-advantages/" target="_blank">Source</a></p>
+      </dd>
+
+      <dt>
+        10. How would you expect a Web browser to render an emphasized word (i.e., included in an em element) in a paragraph with an italic font style? Check whether your browser behaves according to your expectation.
+      </dt>
+
+      <dd>
+        The browser should render it as an emphasized word, even when it does not do its job to emphasize it in the text.
+      </dd>
+      <dt>11. Pick two web browsers from the list below. What are in your view the key differences between the two browsers?
+        <ol id="browserlist">
+          <li>Apple Safari</li>
+          <li>Google Chrome (or Chromium on Debian Linux)</li>
+          <li>Microsoft Internet Explorer</li>
+          <li>Mozilla Firefox (or Iceweasel on Debian Linux)</li>
+          <li>Opera Web Browser</li>
+        </ol>
+      </dt>
+      <dd>
+        <ul>
+          <li>Internet Explorer = no “bookmark” dragging, no tab “dragging”, very simple and antiquated way of managing bookmarks and tabs.</li>
+          <li>Chrome = bookmark and tab “dragging,” much more modern and useful management of tabs and bookmarks, easy to use but with advanced features too</li>
+          <li>Internet Explorer = better multiple tab system (it does not scrunch the tabs down until you can’t see what they are anymore, instead it shrinks them to a point, and then forms a scroll-able tab bar)</li>
+          <li>Chrome = It will shrink the tabs down so that they all fit in the tab bar to the point they are so small you can’t read what they are.</li>
+        </ul>
+      </dd>
+    </dl>
+
+    <h2 id="titleQALAB2">Questions and answers LAB 2</h2>
+    <dl id= "Questionsandanswerslab2" class="content">
+      <dt>
+        1. Read the article by Axel Schmetzke, (2001),"Web accessibility at university libraries and library schools" (See Reader for Week 1 on BlackBoard). Schmetzke found that the most prevalent accessibility error is not having ALT texts for images. With which WCAG guideline does this correspond?
+      </dt>
+
+      <dd>This corresponds to WCAG guideline <a class="restLinks" href="https://www.w3.org/TR/WCAG20-TECHS/H37.html" target="_blank">H37</a>
+      </dd>
+      <dt>2. The Web Accessibility checker 'Bobby' that Schmetzke used has been taken offline, but its <a class="restLinks" href="http://wave.webaim.org/" target="_blank">predecessor WAVE</a> can be found online. Run the tool on a web site you think <strong>should</strong> be accessible. Briefly write down your key observations.
+      </dt>
+
+      <dd>
+        The dutch government website overheid.nl should be accessable because it should be accessable by everyone. However, It has <a class="restLinks" href="http://wave.webaim.org/report#/overheid.nl" target="_blank">13 contrast errors</a>. On the other hand has almost every picture a description. This is necessary for screen readers.
+        <br>
+        Another website, for service dogs has <a class="restLinks" href="http://wave.webaim.org/report#/https://www.geleidehond.nl/" target="_blank">0 errors and 26(!) features</a>. This is better than the dutch government website. http://wave.webaim.org/report#/https://www.geleidehond.nl/
+      </dd>
+
+      <dt>
+        3. Acquaint yourself with principles of color contrast, e.g. through the <a class="restLinks" href= "http://snook.ca/technical/colour_contrast/colour.html" target="_blank">Color Contrast Check</a>. Test three color combinations and write a short report of the results and how these should be interpreted.
+      </dt>
+
+      <dd>
+        <ul>
+          <li>Blue background with a yellow font: The differences were high and it passed every contrast test.</li>
+          <li>Yellow background with an orange font: The differences are not that great and therefore it fails all tests</li>
+          <li>White background with black text: passes all the tests and is the most clear.</li>
+        </ul>
+      </dd>
+
+      <dt>4. Make sure you understand the difference between a <em>Native app</em> versus a <em>(responsive) Web app</em>. Discuss at least one advantage of native apps over web apps and vice versa.
+      </dt>
+
+
+      <dd> Native apps are faster, the response time is better. This is because the code is precompiled.
+        Web apps ensure compatibility for every Operating System with a browser. Native applications run only on one type of operating system.
+      </dd>
+
+      <dt>5. Summarize the key multilingual issues that <a class="restLinks" href= "http://www.w3.org/" target="_blank">W3C</a> is addressing within the "Internationalization" activity. (Expected length: half page)
+      </dt>
+
+      <dd><blockquote>"The mission of the W3C Internationalization Activity is to ensure that W3C's formats and protocols are usable worldwide in all languages and in all writing systems."</blockquote>   <a class="restLinks" href="https://www.w3.org/International/about" target="_blank">Source</a> <br>
+        <br>
+        The goal is that tech should support any writing system in the world. This is a big challenge, especially because every website needs implementation.
+        The main issues W3C is addressing is that browsers need to be compatible with differences in language, encoding and text direction.
+        Some languages (e.g Mongolian, Chinese and Japanese) can be written vertically, so CSS SVG and XSL-FO should support it. Other languages like Arabic, Persian etc. mix left-to-right and right-to-left text. To make sure this works and looks well format developers need to provide ways for authors to control the direction of their content. This is necessary for style purposes.<br>
+        In contact forms, different Time zones, calendars etc. should be considered while implementing.<br>
+        Even cultural problems like symbol interpretation makes a difference. Japan for example sees a circle as something that is correct and a checkmark incorrect. While the rest of the world interprets this the other way around.
+        <p>A few of the projects the internationalization activity is working on:</p>
+        <ul>
+          <li>Arabic</li>
+          <li>Chinese</li>
+          <li>Mongolian</li>
+          <li>Encoding</li>
+          <li>Vertical text</li>
+          <li>Ruby (markup, styling)</li>
+          <li>Unicode in XML formats</li>
+        </ul>
+        <a class="restLinks" href="http://w3c.github.io/i18n-activity/projects/" target="_blank">Source</a>
+      </dd>
+      <dt>6. What is the IP address of the server running the website at http://www.few.vu.nl? And the IP address behind the site running http://www.cs.vu.nl? Explain how you found the answer. How are these addresses related?
+      </dt>
+      <dd>NSlookup found <code>130.37.164.154</code> for few.vu.nl and both cs.vu.nl <br>
+        These IP addresses are the same, because they redirect to the same server. The hostname makes the difference for the server which webpage to send.
+      </dd>
+
+      <dt>7. Look up information about the new protocol for IP addresses (IPv6, IP version 6). Describe the main features of this protocol and indicate what the reasons are to move from version 4 to version 6. (Expected length: 1/4 page)
+      </dt>
+      <dd>IPv6 has more address space than IPv4. Since we already ran out of IPv4 addresses, the adoption of IPv6 is necessary. IPv4 has “only” 4 billion unique addresses.  IPv6 has a couple of undecillion addresses. This is because IPv4 has only 32 bits address space and IPv6 128 bits. the IPv6 header format is simpler which makes it easier to learn how IPv6 works and to analyze packets. <br>
+        The packet headers differs from IPv4 in the following aspects:
+        <ul>
+          <li>Qos  is built in IPv6 which is called flow labeling. Therefore the flowlabel header field is introduced.</li>
+          <li>IPv6 header field could be added after the required header fields. This supports flexibility.</li>
+          <li>IPv6 packets will never be fragmented by routers or other core network devices.</li>
+          <li>IPv6 packets won’t have an checksum in the header.</li>
+          <li>IPv6 has auto configuration, a new feature which makes DHCP unnecessary.</li>
+        </ul>
+      </dd>
+
+      <dt>8. What are MIME types? Find out which MIME types of type text there are. Which authoritative source(s) have you used?
+      </dt>
+
+      <dd>MIME types are types of interpretation/protocols for files in ASCII characters. The types are mainted by IANA.There are 106 MIME types of type text.<br>
+        <a class="restLinks" href="https://www.sitepoint.com/web-foundations/mime-types-complete-list/" target="_blank">Source</a>
+      </dd>
+
+      <dt>9. Make sure you have read the blog post <a class="restLinks" href="https://www.jeffknupp.com/blog/2014/03/12/what-is-a-web-server/" target="_blank">What Is A Web Server?</a> as described in the Week 1 Reader on Blackboard. Knupp states that the GET method is the most common HTTP request method. Name at least one other HTTP request method and find out what the differences are between GET and the one you picked. Which authoritative source(s) have you used?
+      </dt>
+
+      <dd>The POST method, it is used to upload information (like search fields) to the server.<br>
+        GET is used to ask the server for content, in order to download it. The POST method does the opposite.<br>
+        <a class="restLinks" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html" target="_blank">Source</a>
+      </dd>
+
+      <dt>10. Most of the well-known HTTP web servers serve HTML and other content to end users. But behind the scenes, there are many HTTP servers that provide services for other web sites. To manage who is allowed to do what on these services, they often deploy <strong>keys</strong>: short sequences of characters that are used to uniquely identify you. We will use an example of such a web site in the assignments, for which your need a key. So please go the page at http://wt.ops.few.vu.nl/keys and generate a key. Please record the value of the key generated as the answer to this question, so you can use it later in the assignments.
+      </dt>
+      <dd>fbd6c1b6
+      </dd>
+    </dl>
+
+    <h2 id="titleQALAB3">Questions and answers LAB 3</h2>
+    <dl id= "Questionsandanswerslab3" class="content">
+      <dt>1. For the lecture preparation, you should have already made yourself familiar with the material in <a class="restLinks" href="https://www.codecademy.com/learn/javascript" target="_blank">JavaScript fundamentals</a> on Codecademy, as listed in the Week 2: Reader on BlackBoard. If you did not do this yet, do it now, because you will need it for the next assignment. The tutorial also contains an <a  href="https://www.codecademy.com/en/courses/getting-started-v2/2/1" target="_blank">excercise</a> that explains the <code>console.log();</code> function.
+        <br>
+        While the Codecademy website lets you conveniently practice and execute your code interactively on their pages, in the real world, your JavaScript code will be hidden in your webpage and be executed when your HTML page is loaded.
+        <br>
+        The very page you are currently looking at, for example, also contains a few calls to <code>console.log();</code>, and these calls should already have been executed when you loaded this page in your browser. Enable the JavaScript console in your favourite browser, so you <strong>know</strong> you can see all the generated messages. Explain shortly what browser you used and how you have enabled the console.
+        <br>
+        Make sure you have at least tried one or two interesting examples from the tutorial in your own HTML file, so you are sure that <code>console.log();</code> actually works!
+      </dt>
+      <dd>
+        In Google Chrome by pressing cntl+swift+J on a page or by selecting the Chrome Menu icon, menu -> More Tools -> Developer Tools.
+      </dd>
+
+      <dt>2. For the lecture preparation, you should have already made yourself familiar with the material in <a	href="http://www.w3schools.com/js/js_htmldom.asp" target="_blank">the	introduction to the HTML DOM on w3schools.com</a>, as listed in the Reader on BlackBoard. If you did not do this, do it now. Show how you can use JavaScript and the DOM API to change the background of the body element to the color red. Also show how you can override the behavior of clicking on an <code>&lt;a&gt;</code> element, using only JavaScript and the DOM API, without other libraries. Check and make sure the code in your answer really works in your browser (If you do not know what an API is, find this out too!).
+      </dt>
+      <dd>
+        We can change the background colour with the following script:
+        <pre><code>
+          &lt;button type="button" onclick="redBackground()"&gt;Set background color&lt;/button&gt;
+          &lt;script&gt;
+          function redackground() {
+            document.body.style.backgroundColor = "red";
+          }
+          &lt;/script&gt;
+        </code></pre>
+        After testing it worked successfully but I didnt implement this on our site for practical reasons(background image).
+        <br><br>
+        We can override the behaviour of clicking on a <code>&lt;a&gt;</code> element with the following script:
+        <pre><code>
+          &lt;script&gt;
+          function preventEvent(event) {
+            event.preventDefault();
+            alert("Link is prevented"); /*optional*/
+          }
+          &lt;/script&gt;
+        </code></pre>
+        Tested and working:
+        <a class="restLinks" href="http://youtube.com" onclick="preventEvent(event);" target="_blank">A link to youtube for testing</a>
+      </dd>
+
+      <dt>3. For the lecture preparation, should have already made yourself familiar with the basics in the <a class="restLinks" href="http://learn.jquery.com/about-jquery/how-jquery-works/" target="_blank">JQuery tutorial</a>,  as listed in the Reader on BlackBoard.  If you did not do this, do it now. Make sure that <a class="restLinks" href="http://learn.jquery.com/about-jquery/how-jquery-works/#complete-example" target="_blank">the example</a> runs on your machine.  Compare the use of JQuery to change the behavior of the  <code>&lt;a&gt;</code> element as shown in the example with the code you used in the previous question. List pros and cons of both methods.
+      </dt>
+
+      <dd>To use JQuery, Jquery is required. Also the code is more complicated. In JS the code is simpler and far easier but due to this, fewer options are available.
+      </dd>
+
+      <dt>4. Describe the major similarities and differences between Python and JavaScript. (if you are more familiar with Java, you may also compare Java to JavaScript)
+      </dt>
+
+      <dd>Both Java and Javascript are Object Oriented Programming (OOP) languages.
+        <br>
+        <br>
+        Key differences between Java and JavaScript:
+        <ul>
+          <li>Java is an OOP programming language while Java Script is an OOP scripting language.</li>
+          <li>Java creates applications that run in a virtual machine or browser while JavaScript code is run on a browser only.</li>
+          <li>Java code needs to be compiled while JavaScript code are all in text.</li>
+          <li>They require different plug-ins.</li>
+        </ul>
+        <a class="restLinks" href="https://www.java.com/en/download/faq/java_javascript.xml" target="_blank">Source</a>
+
+      </dd>
+
+      <dt>5. What does the acronym "AJAX" stand for? Explain the role of the term the first "A" refers to.
+      </dt>
+
+      <dd>"AJAX" stands for <strong>asynchronous JavaScript and XML</strong>. Asynchronous is a form of input/output processing that permits other processing to continue before the transmission has finished.
+      </dd>
+
+      <dt>6. What is the role of the host objects in JavaScript? Name two often used host objects. Why are there no equivalents in Java or Python?
+      </dt>
+
+      <dd>Host objects are objects that are supplied to JavaScript by the browser environment. Examples of these are window, document, forms, etc. Python and Java are not browser based programming languages so there is no need for host objects.
+      </dd>
+
+      <dt>7. Name two objects that are built into the JavaScript language. Briefly explain their role.
+      </dt>
+
+      <dd>The <code><strong>parseInt()</strong></code> function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems).
+        <br>The global <code><strong>isFinite()</strong></code> function determines whether the passed value is a finite number. If needed, the parameter is first converted to a number.
+      </dd>
+
+      <dt>8. Briefly explain the role of <strong>events</strong> and <strong>event listeners</strong> in JavaScript.</dt>
+
+      <dd>An event listener is a procedure or function in a computer program that waits for an event to occur.
+        <br>HTML events are "things" that happen to HTML elements. When JavaScript is used in HTML pages, JavaScript can "react" on these events.
+      </dd>
+
+      <dt>9. Many organisations provide lectures or tutorials on web technology and publish videos and slides of these lectures on the web in so called "webinars". These lectures provide an often overlooked, but rich source of information. Watch the <a class="restLinks" href="http://www.youtube.com/watch?v=ZE8ODPL2VPI" target="_blank">video of Mano Marks' Google Map API tutorial</a>. Explain in 3 lines the functionality of the autocomplete component that Marks describes.
+      </dt>
+      <dd>The Place Autocomplete service is a web service that returns place predictions in response to an HTTP request. The request specifies a textual search string and optional geographic bounds. The service can be used to provide autocomplete functionality for text-based geographic searches, by returning places such as businesses, addresses and points of interest as a user types.</dd>
+
+      <dt>10. Use (at least) one <strong>interactive widget</strong> from a JavaScript widget library to enhance the output or input of the product inventory. Be creative! If you really lack inspiration, try adding a calendar widget to better support input of dates (in case your browser does not do that by default), or to use a map widget for visualising the location fields in your product table.
+      </dt>
+      <dd>Check <a class="restLinks" href="#map">map</a>
+      </dd>
+
+    </dl>
+
+    <h2 id="titleQALAB4">Questions and answers LAB 4</h2>
+    <h3 id="Question1">Question 1</h3>
+    <dl id="Questionsandanswerslab4_1" class="content">
+      <dt>a.Have a closer look at the term frequency matrix. Given this table, how well do you think the tokenizer did its job? Do you see any room for improvement?
+      </dt>
+      <dd>I think it did a decent job but there are definitely improvements possible. Words like the "t" and "s" are not correctly parsed. They are probably from words that contain an apostrophe like "don't".
+      </dd>
+
+      <dt>b. Looking at the top 30, does it make sense to include all of them in the stop words list? Explain your answer.
+      </dt>
+      <dd>In my opinion it does not. Words as "the","and","to","a","it" and "i" are words that should be considered stopwords since they're common in language. A word like "Alice" should not be considered a stopword since this is not a commonly used word in the english language and is relevant for a search engine.
+      </dd>
+
+      <dt>c. Looking at the top 30, do you think the frequency follows Zipf’s law? You can run <code>z &lt;- zipf(alice_index$total)</code> to find out. Explain in your own words what <q>following Zipf’s law</q> means in this case.
+      </dt>
+      <dd>This is the raw output of the <code>z &lt;- zipf(alice_index$total)</code> command:
+
+        <pre>          the   and    to     a    it   she     i    of  said   you
+          1644   872   729   632   595   553   543   514   462   411
+          alice    in   was  that    as   her     t    at     s    on
+          398   369   357   315   263   248   218   212   201   193
+          all  with   had   but   for  they    so    be   not  very
+          182   180   178   170   153   152   151   148   145   144
+        </pre>
+        <blockquote>"The most frequent word will occur approximately twice as often as the second most frequent word, three times as often as the third most frequent word, etc."</blockquote>
+        According to Zipf's law all the answers should be approximately the same as 1644.
+        <pre>
+          1644*1=     1644
+          872*2=	1744
+          729*3= 	2187
+          632*4= 	2528
+          595*5= 	2975
+        </pre>
+        It seems not to be true but Zipf's law make the most errors for highest and lowest frequency words. So as the graphs shows us, Zipf's law actually does apply to the text eventhough the first 5 words were not 100% correct.
+        <a class="restLinks" href="http://www.ccs.neu.edu/home/ekanou/ISU535.09X2/Handouts/Review_Material/zipfslaw.pdf">Source</a>
+      </dd>
+
+      <dt>d. Similarly, run<code> h &lt;- heaps(alice_index$total)</code> to determine whether Heaps law applies. Explain in your own words what <q>Heaps’ law applies</q> means in this case.
+      </dt>
+      <dd>The text does seem to apply to Heaps law.
+        <a class="restLinks" href="http://www.ccs.neu.edu/home/ekanou/ISU535.09X2/Handouts/Review_Material/zipfslaw.pdf">"The number of unique words V in a collection with N words is approximately
+          Sqrt[N]."</a><br>
+          If we check the graph, the formfactor confirms this.
+      </dd>
+    </dl>
+
+    <h3 id="Question2">Question 2</h3>
+    <dl id="Questionsandanswerslab4_2" class="content">
+      <dt>a. How do you assess the quality of the TF-based search. What can you say about <strong>precision</strong> and <strong>recall?</strong>
+      </dt>
+      <dd>TF search is based on term frequency. This means words stop words will be counted as important/search worthy. Therefore precision will be low. The recall on the other hand could be good. This is because stop words do not exclude good matches.
+      </dd>
+
+      <dt>b. Compare the TF-based search with the TFIDF-based search. What has changed? Try to find a few term that score relatively high on TFIDF for the highest ranking document. List the three term with the highest TFIDF score that you found, along with their score. Do you think these terms "describe" the associated Alice chapter well?
+      </dt>
+      <dd>TF-based search shows the amount of times the word appears in the document while TF-IDF-based search shows the percentage of the word, that means the weigth it has in the document.
+      </dd>
+
+      <dt>c. Alice in Wonderland only has 12 chapters, what can you say about the <strong>precision at k</strong> where k=5 for both types of searches. That is, what if you would only look at the 5 highest ranked results, and discard the other results as irrelevant.
+      </dt>
+      <dd>TF-based sarch will give us the 5 most common words in the document.<br>TF-IDF-based will give us the 5 most important words in the document.
+      </dd>
+
+      <dt>d. What would happen to precision and recall if you implemented the improvements to the tokenizer you suggested in question 1a.?
+      </dt>
+      <dd>I dont think there is going to be any significant difference. There is a chance that Recall would increase.
+      </dd>
+    </dl>
+
+    <h2 id="titleQALAB5">Questions and answers LAB 5</h2>
+    <dl id="Questionsandanswerslab5" class="content">
+      <dt>1. Make sure you have read the blog post <a	href="http://www.jeffknupp.com/blog/2014/03/12/what-is-a-web-server/">What Is A Web Server?</a> as described in the Week 2: Reader on Blackboard. Knupp states that the GET method is the most common HTTP method. He does not discuss that the HTTP GET method is assumed to be<em>idempotent</em>. Explain
+        <ol>
+          <li>what idempotent means in this context</li>
+          <li>how idempotent requests simplify the implementation of a caching HTTP proxy,</li>
+          <li>how so-called "visitor counters" often break this assumption, and</li>
+          <li>how such counters might be negatively affected by proxies.</li>
+        </ol>
+      </dt>
+      <dd>If you call GET method on server nothing will be changed on server, so GET is idempotent. HTTP caching is applicable only to idempotent requests, which makes a lot of sense; only idempotent and nullipotent requests yield the same result when run multiple times.
+      </dd>
+
+      <dt>2. HTTP is a so-called <em>stateless</em> protocol. Explain what this means. Name at least one advantage and disadvantage of the fact that HTTP is stateless.
+      </dt>
+      <dd>It means it has no state or progress. States or progress can mean that a user is already logged in or already visited a webpage. The advantage of this is that it is lightweight and is it better for performance. The disadvantage is that there is another protocol (cookies) needed to make sure the state is known by the server.
+      </dd>
+
+      <dt>3. One of the first applications of HTTP <em>cookies</em> was to  add "shopping basket" functionality to the web sites of online shops. Explain why such sites are hard to build without cookies, and how cookies are used to implement electronic "shopping baskets". (max 100 words)
+      </dt>
+      <dd>If someone want to buy something from a webshop and they don't have cookies, the server won't know if someone clicked “add to cart”. So if i (for example) add a USB stick to the cart and then click on another link, the stateless web server will serve the page without knowing there needs to be something in the basket. That is why (almost) everyone has a cookie in its browser and the server has a database with the cookie and the items the person has in its basket listed.
+      </dd>
+
+      <dt>4. Make sure you have read the blog-post <a	href="https://bourgeois.me/rest/">Some REST best practices</a>, as described in the Week 3: Reader on BlackBoard. The author mainly lists 2xx (success) and 4xx (client error) HTTP status codes. Find out what a 303 status code in response to a HTTP/1.1 request stands for. Which authoritative source(s) have you used? Explain why this is source can be considered authoritative.
+      </dt>
+      <dd>It means “see other” and is redirecting the browser to a different location as an indirect response.
+        <br><a	href="https://httpstatuses.com/303">Source</a>
+      </dd>
+
+      <dt>5. Many web sites serving HTML pages for human readers, also offer RESTfull services that allow other application developers to develop web application using their services. To be able to use their services, developers need access to clear documentation that described how to use these REST APIs. Good examples of such rest documentation include: the <a class="restLinks" href="https://developer.spotify.com/web-api/">Spotify Web API</a> or the Twitter <a class="restLinks" href="https://dev.twitter.com/rest/public">REST APIs</a>. While the content of these two sites is really different, the structure of their documentation has many similarities. Study the documentation page of these two individual services:
+        <ul>
+          <li><a class="restLinks" href="https://developer.spotify.com/web-api/get-album/">https://developer.spotify.com/web-api/get-album/</a></li>
+          <li><a class="restLinks" href="https://dev.twitter.com/rest/reference/get/statuses/user_timeline">https://dev.twitter.com/rest/reference/get/statuses/user_timeline</a></li>
+        </ul>
+        Both document the three key ingredients of a REST resource:
+        <ol>
+          <li>The <strong>endpoint</strong> of the resource, including the full URL and the parameters that can be used</li>
+          <li>The <strong>HTTP method</strong> that may be applied to the resource, e.g. GET, POST, HEAD, etc.</li>
+          <li>The  <strong>response format</strong> in which the resource will be served, e.g. in JSON, XML, CSV, etc.</li>
+        </ol>
+        Make a simple (two row by three column) table and summarize briefly what, according to this documentation, the three key REST ingredients are for these two services. Both pages are not really informative about the <strong>HTTP response codes</strong> you should expect, especially in case of an error. Add a fourth column with the three most likely HTTP response codes, along with for each code, a typical situation in which it might occur. For example, what HTTP response code do you expect when the server is overloaded? or when you are refused access to the data you requested?
+        <pre>
+          Note that the three key ingredients of REST are well documented, and both pages
+          included a clear illustrative example. The two real world examples above thus provide
+          a good indication of how to document your own REST service in Assignment 3!
+          (but do not forget the HTTP response codes).
+          Please complete answering this question before you start the documentation part
+          of Assignment 3!
+        </pre>
+      </dt>
+      <dd>
+        <table>
+          <thead>
+            <tr>
+              <td>Endpoint</td><td>HTTP method</td><td>Response format</td><td>Possible HTTP response codes</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2 <br>
+                Parameters:
+                <ul>
+                  <li>include_rts</li>
+                  <li>contributor_details</li>
+                  <li>exclude_replies</li>
+                  <li>trim_user</li>
+                  <li>max_id</li>
+                  <li>count</li>
+                  <li>since_id</li>
+                  <li>user_id</li>
+                  <li>screen_name</li>
+                </ul>
+              </td>
+              <td>Not specified in header, But on the documentation GET and PUT is mentioned.</td>
+              <td>JSON</td>
+              <td>HTTP response code when access denied: <a class="restLinks" href="https://httpstatuses.com/403">403</a><br>
+                On overload by too many requests by all users:<a class="restLinks" href="https://httpstatuses.com/503">503</a><br>
+                More than 900 requests/15min by one user:<a class="restLinks" href="https://tools.ietf.org/html/rfc6585#section-4">429</a>
+              </td>
+            </tr>
+            <tr>
+              <td>https://api.spotify.com/v1/albums/{id}<br>
+                parameters
+                <ul>
+                  <li>id</li>
+                  <li>market</li>
+                </ul>
+              </td>
+              <td>GET, POST, OPTIONS, PUT, DELETE</td><td>JSON</td><td>
+                HTTP response code when access denied: <a class="restLinks" href="https://httpstatuses.com/403">403</a><br>
+                On overload by too many requests by all users:<a class="restLinks" href="https://httpstatuses.com/503">503</a><br>
+                On overload caused by one user:<a class="restLinks" href="https://tools.ietf.org/html/rfc6585#section-4">429</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </dd>
+
+      <dt>6. While you can easily try out HTTP <code>GET</code> requests in the URL bar of your browser, for other methods, you need another web client to test an RESTful service. If you are comfortable with using the command line interface (of your Linux or mac terminal, or the PowerShell on Windows), you might want to use the <code>curl</code> command line tool that is also used in the examples on the <a class="restLinks" href="https://developer.spotify.com/web-api/get-album/">Spotify</a> pages. Many will prefer a graphical REST client.  We strongly advise you to install one and learn how to use it. For example, <a class="restLinks" href="https://www.getpostman.com/">Postman</a> is available on Windows, Mac and Linux, also as a browser plugin.
+        <br>
+        Use the REST client of your choice to make an HTTP <code>HEAD</code> request to the resource used in the Spotify example: <code>https://api.spotify.com/v1/albums/0sNOF9WDwhWunNAHPD3Baj</code>. Study the HTTP response headers in the server's response you receive back. According to these response headers, which other HTTP requests methods are also allowed on this resource?  And from which <code>origin</code> are you allowed to make these requests?
+      </dt>
+      <dd>The following HTTP requests are allowed on the source: GET, POST, OPTIONS, PUT, DELETE Any origin is allowed because the specification in the header gives a wildcard (*).
+      </dd>
+
+      <dt>7. By inspecting the response headers of the <code>HEAD</code> request you made above, you <strong>cannot</strong> tell what the <code>Content-Type</code> of a response on a GET request for the same resource would be (why not?).  What do you expect it to be?  Use your REST client to make a GET request to the same resource.  What is the actual <code>Content-Type</code> of the response? Is it what you expected it to be? Explain your answer.
+        <pre>
+          Note that you are advised to also use the same REST client in Assignment 3
+          to conveniently test your own REST service. Please complete answering these
+          lab questions before you start the coding part of Assignment 3!
+        </pre>
+      </dt>
+      <dd>I expect it to be in JSON format, because this was in the documentation.'
+        <br><a	href="https://developer.spotify.com/web-api/get-album/">Source</a>
+        <br>The get request returns the following content type: application/json; charset=utf-8. This is exactly what i expected it to be.
+      </dd>
+
+      <dt>8. Web frameworks come in a wide range of flavors. Dimensions on which you can assess them include installation size and complexity. <a class="restLinks" href="http://bottlepy.org/">Bottle</a> is a so called micro web-framework for Python, that can be installed on top of an existing Python installation by downloading a single file. Make sure you have done the Bottle tutorial as described in the Reader on BlackBoard and have the first "Hello World" example working on your own computer. Tips:
+        <ul>
+          <li>Start by downloading the file "bottle.py" into the folder you want to use for Assignment 3.</li>
+          <li>Copy the code in the "Hello World" example into a new file "hello.py" in the same folder</li>
+          <li>Use the <code>cd</code> command in a command line shell (e.g. PowerShell on Windows, Terminal on MacOS, xterm on Linux) to navigate to the same folder</li>
+          <li>Check you can start your "Hello World" HTTP server from the command line using <code>python hello.py</code></li>
+          <li>if you run the tutorial on one of the VU machines, port 8080 may already be in use.  Feel free to change the port to 8081 or another value to work around this.</li>
+          <li>Further down the tutorial, under <a class="restLinks" href="http://bottlepy.org/docs/dev/tutorial.html#auto-reloading">Auto Reloading</a>, the tutorial shows how you can make python automatically reload your code after you made any changes to "hello.py". Add this to your code, restart manually one more time and check if your code is indeed reloaded automatically on further edits.</li>
+        </ul>
+        How can you see that your code is indeed reloaded after you made a change in "hello.py"? What happens if you accidentally introduce a syntax error?
+      </dt>
+      <dd>When the behaviour is different and it does what you defined it should do since your last change. If you introduce an error due to your last change the program will stop and throw an error.
+      </dd>
+
+      <dt>9. In the Bottle tutorial, <a class="restLinks" href="http://bottlepy.org/docs/dev/tutorial.html#templates">templates</a> are used to dynamically generate HTML code from data, using Python at the server-side.  Note that this is a very different from the approach we used in Assignment 2.  There you also create HTML dynamically, but on client-side, using JavaScript. Note that the server on <code>wt.ops.few.vu.nl</code> serves its data in JSON format, not in the form of an HTML table generated by a template. List at least one key advantage of each approach, that is, an HTTP server serving database data dynamically in an HTML table versus one that serves the same data in JSON format.
+        <pre>
+          The server you need to make in Assignment 3 is in many ways similar to the
+          server we run at <code>wt.ops.few.vu.nl</code>. Both are implemented using
+          Bottle and both serve data only in JSON. So both server do <strong>NOT</strong> need to
+          use template to generated HTML.
+        </pre>
+      </dt>
+      <dd>The advantage of servering the database in JSON format is that it is “easier” and therefore better for the performance of the server. It only has to serve (in our case) one line of text.
+        <br>The advantage of dynamic HTML is that the client does not need to convert JSON to HTML itself, which is better for the performance of the browser. It also gives you the information like the developer meant it to be.
+      </dd>
+
+      <dt>BONUS
+      </dt>
+      <dd>SEO stands for Search engine optimization. A white hat SEO is someone who uses the conventional ways to improve its website ranking in a search engine. It can for example add good content to improve its ranking.
+        <br>A black hat SEO uses unconventional tricky ways to improve its websites ranking. For example adding text in the page with tags that are synonyms to the subject. To make this invisible/ hardly visible to users they make the text color the same as the background color using CSS for example. Hosting of multiple websites linking to a single websites is also a commonly used technique.
+        <br><a	href="https://www.karelgeenen.nl/termen/black-hat-seo/">Source</a>
+        <br><a	href="http://www.webopedia.com/TERM/B/Black_Hat_SEO.html">Source</a>
+      </dd>
+    </dl>
+
+    <h2 id="titleQALAB6">Questions and answers LAB 6</h2>
+    <dl id="Questionsandanswerslab6" class="content">
+      <dt>1. Make sure you have read <a class="restLinks" href="http://www.cs.umd.edu/~ben/ShneidermanCACM6-2007.pdf">Web Science: A Provocative Invitation to Computer Science</a> (see also Week 3: Reader on BlackBoard). What examples of negative aspects of Web-based social interaction does Shneiderman mention?  Do you share his view that these topics should be seen as part of Web Science?  Or are these topics better left to existing research fields as sociology or law?  Motivate your answer.
+      </dt>
+      <dd> If you call GET method on server nothing will be changed on server, so GET is idempotent. HTTP caching is applicable only to idempotent requests, which makes a lot of sense; only idempotent and nullipotent requests yield the same result when run multiple times.
+      </dd>
+
+      <dt>2. Explain what the term <em>the long tail</em> refers to in the context of web commerce.  Most brick-and-mortar shops of books, games and music are forced to focus and sell only a few best-selling products.  Why can the long tail still be profitable for online shops?
+      </dt>
+      <dd>It means it has no state or progress. States or progress can mean that a user is already logged in or already visited a webpage. The advantage of this is that it is lightweight and is it better for performance. The disadvantage is that there is another protocol (cookies) needed to make sure the state is known by the server.
+      </dd>
+
+      <dt>3. Explain the role of <a class="restLinks" href="http://www.data.gov/">data.gov</a> in the discussion about a more transparent government.  What could be a potential danger of sites like data.gov?  (if you prefer, you can instead answer the same questions about the Dutch <a class="restLinks" href="https://data.overheid.nl/">data.overheid.nl</a>).
+      </dt>
+      <dd>If someone want to buy something from a webshop and they don't have cookies, the server won't know if someone clicked “add to cart”. So if i (for example) add a USB stick to the cart and then click on another link, the stateless web server will serve the page without knowing there needs to be something in the basket. That is why (almost) everyone has a cookie in its browser and the server has a database with the cookie and the items the person has in its basket listed.
+      </dd>
+
+      <dt>4. Jakob Nielsen regularly publishes columns on usability, discussing both good and bad Web design. In a 2011 column he collected his <a class="restLinks" href="https://www.nngroup.com/articles/top-10-mistakes-web-design/">Top 10 Mistakes in Web Design</a>. We are now in 2016, more than five years later.  Do you think Nielsen's top 10 is still relevant? From your own experience, do you know of any severe usability problems you encounter on current Web sites that are missing from this list? Which problems in his top 10 have become rare in 2016?
+      </dt>
+      <dd>It means “see other” and is redirecting the browser to a different location as an indirect response.
+        <a class="restLinks" href="https://httpstatuses.com/303">Source</a>
+      </dd>
+
+      <dt>5. Choose an existing website and imagine that you are designing an A/B test to evaluate changes to that website. Information on A/B tests can be found at <a class="restLinks" href="https://www.nngroup.com/articles/putting-ab-testing-in-its-place/">Putting A/B Testing in Its Place</a>. Discuss the two versions of the site you would want to test, which part of the site you would vary, and how you would measure performance of each version. What would be the <em>dependent</em> and <em>independent</em> variables in your A/B test?  What would be your <em>hypothesis</em>?
+      </dt>
+      <dd>
+        I would test facebook.com with 2 different desktop versions. I would test the load speed by refreshing the page and let the browser measure the difference in speeds. I would try to display a full timeline on both sites to see if the load times increase really fast when more data is loaded. dependent variables would be speed, independent variables would be accessibility.
+        I think the most beautiful or the one with the best performance would be the most favourite choice.
+        <a class="restLinks" href="https://en.wikipedia.org/wiki/A/B_testing">Source</a>
+      </dd>
+
+      <dt>6. Choose an existing web site and build a mini-survey that could appear as a popup on that web site. Explain (briefly) the purpose of your survey, and why you choose to use open questions, yes/no questions and/or questions on a scale (e.g the Likert scale). The html of the survey should work, but obviously it does not need to work on the web site you chose. Include a link to that web site instead.
+      </dt>
+      <dd>
+        For example this could be a popup:
+        <h3>Help us develop our website:</h3>
+        <p class="noindent">What would you recommend for change? </p>
+        <p class="noindent"><textarea rows="6" cols ="30" name="commentary"></textarea></p>
+        <form method="post">
+          <input type="submit" class="submitbutton" value="Send message" onclick="event.preventDefault();">
+        </form>
+      </dd>
+
+      <dt>7. Explain how the <em>Common Log Format</em> helps developing<em>Web log analysis software</em>.  Briefly describe a scenario in which such software is used in an experiment aimed at improving a web site's link structure.  Hint: after changes to the web site have been made, one could again collect log information and compare the logs collected before the change with those collected after the change, to see if the change was effective. What would be the <em>dependent</em> and <em>independent</em> variables in this experiment?  What would be your <em>hypothesis</em>?
+      </dt>
+      <dd>The <strong>Common Log Format</strong>, also known as the <strong>NCSA Common log format</strong>,(after NCSA_HTTPd) is a standardized text file format used by web servers when generating server log files. Because the format is standardized, the files can be readily analyzed by a variety of web analysis programs, for example Webalizer and Analog. Log files are a standard tool for computer systems developers and administrators. They record the "what happened when by whom" of the system. This information can record faults and help their diagnosis. It can identify security breaches and other computer misuse. It can be used for auditing. It can be used for accounting purposes.The information stored is only available for later analysis if it is stored in a form that can be analysed. This data can be structured in many ways for analysis. For example, storing it in a relational database would force the data into a query-able format. However, it would also make it more difficult to retrieve if the computer crashed, and logging would not be available unless the database was available. A plain text format minimises dependencies on other system processes, and assists logging at all phases of computer operation, including start-up and shut-down, where such processes might be unavailable.
+      </dd>
+
+      <dt>8. The website <a class="restLinks" href="http://www.archive.org">http://www.archive.org</a>stores old versions of the Web. Use this archive to describe briefly the history	of Google or some other site you're interested in. (Expected length: half page)
+      </dt>
+      <dd>Google began in 1996 as a project by Larry Page and Sergey Brin. Larry and Sergey were both studying at Stanford University California. In their research project they came up with a plan to make a search engine that ranked websites according to the number of other websites that linked to that site (and ultimately came up with the Google we have today). Before Google, search engines had ranked sites simply by the number of times the search term searched for appeared on the webpage, and the duo set out to make a more “aware” search engine.
+        <br>
+        The domain google.com was registered on September 14th 1997 and Google Corporation was formed a year later in September 1998.Google started selling advertisements with its keyword searches in 2000, and so Google Adwords/Adsense was born. These advertisements used a system based on the pretence that you only paid for your advertising if some clicked on your ad link – hence the term Pay Per Click (PPC) was born.The term PageRank was patented in September 2001 – this term is actually named after co-founder Larry Page and not, as some think, named because it is the rank of a page (webpage).Also in 2001 co-founder Larry Page stood down as the CEO of Google and former CEO of Novel. Eric Schmidt. was appointed as the new CEO of Google.Google moved its offices to its large Google estate (nicknamed GooglePlex) in Mountainview California in 2003, and is still based there today.
+        <br>
+        In 2004, Google launched its own free web-based email service, known as Gmail. This service was made to rival the free online mail services supplied by Yahoo and Microsoft (hotmail). This new free email service shook up the very foundation of free email with its enormous 1 GB of email storage which dwarfed its rivals’ ten-fold.In 2004 Google launched Google Earth. Google Earth is an amazing creation that is a map of the earth based on satellite imagery. This interactive globe of the world allows you to type in a search for any place in the world and you will automatically be taken to that part of the world. The cool part is that with Google Earth you can zoom right in to street level and actually see your own street and even your house!
+        <br>
+        An interesting fact in the history of Google is that in September 2005, Google made a new partnership with a very interesting company – NASA. This involved building a 1-million square foot research and development centre at NASA’s Ames Research Center. This was interestingly followed a few months later by the launch of Google Mars and Google Moon: two Google maps style applications built on pictures of the moon and the planet Mars.In 2006 Google launched Google Video. Google Video is a cool new search tool. As its title suggests Google video allows you to search the internet for videos. There are thousands of videos to make your search from; from personal homemade videos to TV shows made by the big television corporations.In 2006 Google was added to the Oxford English dictionary as a verb – the verb “to Google” has become so popular that Google has even been worried that their brand name might lose their copyright and patent protections, and allow other companies to be able to legally use the Google brand in their own brand.<br>
+        <br>as from:<a class="restLinks" href="http://www.cozy-digital.co.uk/history-of-google-cozy">Source</a>
+      </dd>
+    </dl>
+  </div>
+</body>
+</html>
